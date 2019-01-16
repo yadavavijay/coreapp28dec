@@ -13,7 +13,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build coreapp28dec/coreapp28dec/coreapp28dec.csproj --configuration $(buildConfiguration)
+- script: dotnet build coreapp28dec/source/repos/coreapp28dec/coreapp28dec/coreapp28dec.csproj --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
