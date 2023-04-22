@@ -1,7 +1,5 @@
 # ASP.NET Core
-- task: owaspzap@1
-  inputs:
-    aggressivemode: true
+
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
@@ -19,6 +17,9 @@ steps:
 - script: dotnet build ~/coreapp28dec/source/repos/coreapp28dec/coreapp28dec/coreapp28dec.csproj --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
+- task: owaspzap@1
+  inputs:
+    aggressivemode: true
 - task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
